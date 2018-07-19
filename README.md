@@ -1,4 +1,7 @@
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+
+This project is an electron wrapped react app made by following the [Building an Electron application with create-react-app](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) guide.
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
@@ -12,6 +15,7 @@ You can find the most recent version of this guide [here](https://github.com/fac
   - [npm start](#npm-start)
   - [npm test](#npm-test)
   - [npm run build](#npm-run-build)
+  - [npm run dev](#npm-run-dev)
   - [npm run eject](#npm-run-eject)
 - [Supported Browsers](#supported-browsers)
 - [Supported Language Features and Polyfills](#supported-language-features-and-polyfills)
@@ -187,6 +191,16 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](#deployment) for more information.
+
+### `npm run dev`
+
+**Note: this operation was made by following the [Building an Electron application with create-react-app](https://medium.freecodecamp.org/building-an-electron-application-with-create-react-app-97945861647c) guide**
+
+Runs the app in the development mode in electron.<br>
+You can also open [http://localhost:3000](http://localhost:5000) to view it in the browser.
+
+The electron app will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
 ### `npm run eject`
 
