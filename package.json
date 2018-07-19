@@ -1,9 +1,10 @@
 {
   "name": "e-longlife_form",
   "version": "0.1.0",
+  "author": "Clément MOINE",
   "description": "React JS Electron application",
   "private": true,
-  "main": "src/Electron/electron-starter.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
     "antd": "^3.7.0",
@@ -11,7 +12,6 @@
     "babel-eslint": "8.2.2",
     "babel-plugin-import": "1.7.0",
     "cross-env": "5.2.0",
-    "electron": "2.0.5",
     "eslint": "4.19.1",
     "eslint-config-airbnb": "16.1.0",
     "eslint-config-prettier": "2.9.0",
@@ -43,6 +43,10 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
   },
+  "devDependencies": {
+    "electron-builder": "^20.22.0",
+    "electron": "2.0.5"
+  },
   "scripts": {
     "start": "cross-env BROWSER=none react-app-rewired start --config-overrides ./config/",
     "build": "react-app-rewired build --config-overrides ./config/",
@@ -51,7 +55,14 @@
     "electron": "electron .",
     "dev": "nf start -p 3000",
     "precommit": "lint-staged",
-    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check"
+    "eslint-check": "eslint --print-config .eslintrc | eslint-config-prettier-check",
+    "prepack": "yarn build",
+    "predist": "yarn build",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.ubidreams.elonglife.form"
   },
   "lint-staged": {
     "src/**/*.{js,jsx,json,css,less}": [
