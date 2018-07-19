@@ -1,8 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from 'react'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// Libraries
+import ReactDOM from 'react-dom'
+import App from 'Containers/App'
+import registerServiceWorker from 'Services/registerServiceWorker'
+
+// Ant Design
+import { LocaleProvider } from 'antd'
+import frFR from 'antd/lib/locale-provider/fr_FR'
+
+ReactDOM.render(
+  <LocaleProvider locale={frFR}>
+    <App />
+  </LocaleProvider>,
+  document.getElementById('root')
+)
+registerServiceWorker()

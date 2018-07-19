@@ -1,0 +1,55 @@
+/* --------------------------------- */
+/* == Variables                      */
+/* --------------------------------- */
+
+@import url('./Variables/variables.less');
+
+/* --------------------------------- */
+/* == Libraries                      */
+/* --------------------------------- */
+
+@import url('~normalize.css');
+
+/* --------------------------------- */
+/* == Styles additionnels            */
+/* --------------------------------- */
+
+@import url('./Fonts/fonts.css');
+
+/* --------------------------------- */
+/* == Flexbox classes (from Knacss)  */
+/* --------------------------------- */
+
+[class*='flex-container'] {
+  display: flex;
+}
+.flex-container-h {
+  flex-direction: row;
+}
+.flex-container-v {
+  flex-direction: column;
+}
+.flex-item-fluid {
+  flex: 1;
+}
+.flex-align-center-h {
+  justify-content: center;
+}
+.flex-align-center-v {
+  align-items: center;
+}
+
+/* --------------------------------- */
+/* == Layout styles                  */
+/* --------------------------------- */
+
+html,
+body {
+  overflow: hidden;
+}
+
+body {
+  font-family: @font-family;
+  font-size: @font-size;
+  background-color: @white;
+}
