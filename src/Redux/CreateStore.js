@@ -28,8 +28,11 @@ export default (rootReducer, rootSaga) => {
 
   /* ------------- Saga Middleware ------------- */
 
-  const sagaMiddleware = createSagaMiddleware()
-
+  const sagaMonitor =
+    process.env.NODE_ENV !== 'production'
+      ? console.tron.createSagaMonitor()
+      : null
+  const sagaMiddleware = createSagaMiddleware({ sagaMonitor })
   middleware.push(sagaMiddleware)
 
   /* ------------- Thunk Middleware ------------- */
@@ -62,8 +65,12 @@ export default (rootReducer, rootSaga) => {
 
   /* ------------- Run ------------- */
 
-  // we'll create the store
-  const store = createStore(rootReducer, compose(...enhancers))
+  // if Reactotron is enabled (default for __DEV__), we'll create the store through Reactotron
+  const createAppropriateStore =
+    process.env.NODE_ENV !== 'production'
+      ? console.tron.createStore
+      : createStore
+  const store = createAppropriateStore(rootReducer, compose(...enhancers))
 
   // configure persistStore and check reducer version number
   if (ReduxPersist.active) {

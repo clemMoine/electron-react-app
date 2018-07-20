@@ -1,3 +1,6 @@
+// Reactotron
+import 'Config/ReactotronConfig'
+
 import React, { Component } from 'react'
 
 // Libraries
