@@ -2,7 +2,7 @@
 /* == Variables                      */
 /* --------------------------------- */
 
-@import url('./Variables/variables.less');
+@import url('~Variables/variables.less');
 
 /* --------------------------------- */
 /* == Libraries                      */
@@ -14,7 +14,7 @@
 /* == Styles additionnels            */
 /* --------------------------------- */
 
-@import url('./Fonts/fonts.css');
+@import url('~Fonts/fonts.css');
 
 /* --------------------------------- */
 /* == Flexbox classes (from Knacss)  */
@@ -51,5 +51,38 @@ body {
 body {
   font-family: @font-family;
   font-size: @font-size;
+  color: @text-color;
   background-color: @white;
+}
+
+.navigation-router,
+#root,
+.routes,
+.route,
+.screen {
+  height: 100%;
+}
+
+/**
+ * LAYOUT FULL SCREEN
+ *
+ * sticky header
+ * scroll main
+ * sticky footer
+ */
+.screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  header,
+  main,
+  footer {
+    padding: @padding-containers;
+  }
+
+  main {
+    flex: 1;
+    overflow-y: auto;
+  }
 }

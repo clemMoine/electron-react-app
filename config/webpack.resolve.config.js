@@ -12,6 +12,8 @@ module.exports = {
       Sagas: path.resolve(__dirname, `${src}/Sagas/`),
       Services: path.resolve(__dirname, `${src}/Services/`),
       Theme: path.resolve(__dirname, `${src}/Theme/`),
+      Variables: path.resolve(__dirname, `${src}/Theme/Variables`),
+      Fonts: path.resolve(__dirname, `${src}/Theme/Fonts`),
       Images: path.resolve(__dirname, `${src}/Images/`),
       Data: path.resolve(__dirname, `${src}/Data/`),
       WebSocket: path.resolve(__dirname, `${src}/WebSocket/`)

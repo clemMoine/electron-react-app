@@ -14,7 +14,7 @@ class NavigationRouter extends Component {
    */
   _renderRoutes(routes, location) {
     return routes.map((route, index) => (
-      <div key={index} className="wrapper">
+      <div key={index} className="route">
         <Route {...route} exact />
       </div>
     ))
@@ -44,10 +44,8 @@ class NavigationRouter extends Component {
             path="/"
             render={props => {
               return (
-                <div className="flex-container-h" style={{ height: '100%' }}>
-                  <div className="flex-item-fluid">
-                    {this._renderRoutes(routes, props.location)}
-                  </div>
+                <div className="routes">
+                  {this._renderRoutes(routes, props.location)}
                 </div>
               )
             }}

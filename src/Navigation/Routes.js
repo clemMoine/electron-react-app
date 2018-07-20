@@ -8,5 +8,11 @@ export const Stack = [
     path: '/',
     name: 'Foo',
     component: Foo
+  },
+  {
+    id: 'BAR',
+    path: '/bar',
+    name: 'Bar',
+    component: Foo
   }
 ]

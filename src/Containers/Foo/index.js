@@ -7,26 +7,56 @@ import Images from 'Images'
 import './Styles/Foo.less'
 
 // Libraries
-import { Button } from 'antd'
+import { Button, message } from 'antd'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={Images.logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+      <div className="foo screen">
+        <header>
+          <img src={Images.logo} className="logo" alt="logo" />
+          <h1 className="title">Welcome to React + Electron App</h1>
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div>
-          <p>Test Ant Design</p>
-          <Button type="primary">Primary</Button>
-          <Button>Default</Button>
-          <Button type="dashed">Dashed</Button>
-          <Button type="danger">Danger</Button>
-        </div>
+        <main>
+          <p className="intro">
+            To get started, edit <code>src/Containers/Foo/index.js</code> and
+            save to reload.
+          </p>
+          <div>
+            <h2>Ant Design Integration</h2>
+            <p>
+              To modify Ant Design default color, edit{' '}
+              <code>@primary-color</code> value in the{' '}
+              <code>/config/index.js</code> file.
+            </p>
+            <Button
+              type="primary"
+              onClick={() => message.loading('Loading message..')}
+            >
+              Primary
+            </Button>
+            <Button onClick={() => message.warning('Warning message..')}>
+              Default
+            </Button>
+            <Button
+              type="dashed"
+              onClick={() => message.info('Informative message')}
+            >
+              Dashed
+            </Button>
+            <Button
+              type="danger"
+              onClick={() => message.error('Error message')}
+            >
+              Danger
+            </Button>
+          </div>
+        </main>
+        <footer>
+          <p>
+            Made with <span style={{ color: 'red' }}>❤</span> by Ubidreams
+          </p>
+        </footer>
       </div>
     )
   }
