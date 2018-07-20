@@ -5,8 +5,11 @@ import createSagaMiddleware from 'redux-saga'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunkMiddleware from 'redux-thunk'
 
-// Actions
-import StartupActions from 'Redux/StartupRedux'
+// Config
+import ReduxPersist from 'Config/ReduxPersist'
+
+// Services
+import Rehydration from 'Services/Rehydration'
 
 // Creation of the store
 export default (rootReducer, rootSaga) => {
@@ -62,11 +65,13 @@ export default (rootReducer, rootSaga) => {
   // we'll create the store
   const store = createStore(rootReducer, compose(...enhancers))
 
+  // configure persistStore and check reducer version number
+  if (ReduxPersist.active) {
+    Rehydration.updateReducers(store)
+  }
+
   // kick off root saga
   sagaMiddleware.run(rootSaga)
-
-  // startup
-  store.dispatch(StartupActions.startup())
 
   return store
 }

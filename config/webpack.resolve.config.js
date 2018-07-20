@@ -16,7 +16,7 @@ module.exports = {
       Fonts: path.resolve(__dirname, `${src}/Theme/Fonts`),
       Images: path.resolve(__dirname, `${src}/Images/`),
       Data: path.resolve(__dirname, `${src}/Data/`),
-      WebSocket: path.resolve(__dirname, `${src}/WebSocket/`)
+      Config: path.resolve(__dirname, `${src}/Config/`)
     }
   }
 }
