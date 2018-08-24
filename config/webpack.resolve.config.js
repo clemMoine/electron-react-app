@@ -16,7 +16,8 @@ module.exports = {
       Fonts: path.resolve(__dirname, `${src}/Theme/Fonts`),
       Images: path.resolve(__dirname, `${src}/Images/`),
       Data: path.resolve(__dirname, `${src}/Data/`),
-      Config: path.resolve(__dirname, `${src}/Config/`)
+      Config: path.resolve(__dirname, `${src}/Config/`),
+      I18n: path.resolve(__dirname, `${src}/I18n/`)
     }
   }
 }

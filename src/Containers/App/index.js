@@ -1,6 +1,9 @@
 // Reactotron
 import 'Config/ReactotronConfig'
 
+// I18n
+import 'I18n'
+
 import React, { Component } from 'react'
 
 // Libraries
